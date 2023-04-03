@@ -12,13 +12,13 @@ data = {}
 
 def sendEMail(recieverEMail):
     student = data[recieverEMail]
-    sender = "te6313236@gmail.com"
+    sender = ""
     msg = MIMEText(f"Dostałeś ocenę: {student['ocena']}")
     msg['Subject'] = "Ocena wystawiona!"
     msg['From'] = sender
     msg['To'] = ', '.join(recieverEMail)
     smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    smtp_server.login(sender, "effknmpximibcgme")
+    smtp_server.login(sender, "")
     smtp_server.sendmail(sender, recieverEMail, msg.as_string())
     smtp_server.quit()
     student['status'] = "MAILED"
