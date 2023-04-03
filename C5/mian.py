@@ -9,7 +9,6 @@ from email.mime.text import MIMEText
 91 - 100 pkt – 5
 '''
 data = {}
-
 def sendEMail(recieverEMail):
     student = data[recieverEMail]
     sender = ""
